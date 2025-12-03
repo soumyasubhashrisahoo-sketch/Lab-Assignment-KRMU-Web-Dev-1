@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Quiz Game</title>
+</head>
+
+<body>
+    <h3>To play the game:</h3>
+    <ol>
+        <li>Right-click here and choose <b>Inspect</b>.</li>
+        <li>Click the <b>Console</b> tab.</li>
+        <li>Copy the code inside the <code>&lt;script&gt;</code> tags below.</li>
+        <li>Paste it into the Console and press Enter.</li>
+    </ol>
+
+
+    <script>
+
+        var quizQ = [
+            { question: "What is the capital of France?", answer: "paris" },
+            { question: "Which planet is known as the Red Planet?", answer: "mars" },
+            { question: "What is 5 + 7?", answer: "12" },
+            { question: "Who is the President of Russia?", answer: "vladimir putin" },
+            { question: "Which language is used for web development?", answer: "javascript" }
+        ];
+
+        function runQuiz() {
+            var score = 0;
+
+
+            for (var i = 0; i < quizQ.length; i++) {
+
+
+                var userAns = prompt(quizQ[i].question);
+
+                if (userAns !== null) {
+
+                    var norin = userAns.toLowerCase().trim();
+                    var norans = quizQ[i].answer.toLowerCase().trim();
+
+
+                    if (norin === norans) {
+                        alert("Correct!");
+                        score++;
+                    } else {
+                        alert("Wrong! The correct answer is: " + quizQ[i].answer);
+                    }
+                } else {
+                    alert("Question skipped.");
+                }
+            }
+
+
+            alert("Quiz Over! Your final score is " + score + " out of " + quizQ.length);
+        }
+
+        runQuiz();
+    </script>
+</body>
+
+</html>
